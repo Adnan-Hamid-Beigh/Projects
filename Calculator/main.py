@@ -13,13 +13,17 @@ def multiply(num1, num2):
 # Divide
 def divide(num1, num2):
   return num1 / num2
+def exponent(num1, num2):
+  return num1 ** num2
+
 
 # dict
 operations = {
   "+": add,
   "-": subtract,
   "*": multiply,
-  "/": divide
+  "/": divide,
+  "**": exponent,
 }
 
 
@@ -30,7 +34,6 @@ def calculator():
   num1 = float(input("What is the first number?: "))
   
   while calculating:
-    # Inputs:
     
     num2 = float(input("What is the second number?: "))
     for symbol in operations:
@@ -50,8 +53,10 @@ def calculator():
       os.system('cls')
       calculator()
       
-    else:
-      calculating = False
-      print("Oops! you hit another key. Rerun.")
-    
+    else:     
+      if input("Oops! you hit another key. To rerun type 'r' or any key to exit: ") == 'r':
+        os.system('cls')
+        calculator()
+      else:
+        calculating = False    
 calculator()
