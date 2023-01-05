@@ -1,2 +1,2 @@
 #   Python Projects
-### Some of my beginner projects using Python
+### Some of my projects using Python
